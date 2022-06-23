@@ -2,7 +2,7 @@
 
 <b>To compile:</b><p>
 ```
-make<p>
+make
 ```
 <b>To run:</b><p>
 ```
