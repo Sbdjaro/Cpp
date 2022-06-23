@@ -1,6 +1,6 @@
 # Simple animation
 
-<h1 align="left">To compile:</h1>
-make
-To run:
+<b>To compile:</b><p>
+make<p>
+<b>To run:</b><p>
 ./Game
