@@ -18,7 +18,7 @@ Implemented do...while, while, if, read, write statements. An example of using t
 	C → a | b | ... | z | A | B | ... | Z
 	R → 0 | 1 | 2 | ... | 9
 	
-<b>Example of the code. Sorting an array</b>
+<b>Example of the code. Sorting an array:</b>
 
 	program
 	var x : int[10],
