@@ -1,7 +1,7 @@
 <h3>Interpreter for the test programming language.</h3> 
 Implemented do...while, while, if, read, write statements. An example of using these operators will be below.<p>
-<b>The language supports the following grammar</b>
-<small>
+	<b>The language supports the following grammar</b>
+	
 P → program D1; B@
 D1 → var D {,D}
 D → I {, I}: [ int [N] | bool[N]| bool| int ]
@@ -17,7 +17,7 @@ I → C | IC | IR
 N → R | NR
 C → a | b | ... | z | A | B | ... | Z
 R → 0 | 1 | 2 | ... | 9
-</small>
+	
 Example of the code. Sorting an array
 <small>
 program
