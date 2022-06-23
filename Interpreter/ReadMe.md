@@ -19,7 +19,7 @@ C → a | b | ... | z | A | B | ... | Z
 R → 0 | 1 | 2 | ... | 9
 </small>
 Example of the code. Sorting an array
-```
+<small>
 program
 var x : int[10],
 z,c,tmp,f : int,
@@ -61,4 +61,4 @@ while z<10 do
 	z:=z+1
 	end
 end
-```
+</small>
