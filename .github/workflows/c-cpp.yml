@@ -13,11 +13,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: configure
-      run: ./configure
-    - name: make
+    - name: Install cpp
+      run: |
+        sudo apt-get update
+        sudo apt install g++
+    - name: Install FLTK
+      run: |
+        sudo apt-get install libfltk1.3-dev
+        sudo apt-get install libx11-dev
+    - name: Compile
       run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+    - name: Start
+      run: Game
