@@ -25,4 +25,7 @@ Flag.o : Flag.cpp
 
 Cell.o : Cell.cpp
 	g++ -c Cell.cpp
+
+clean:
+	 rm -rf *.o Game 
 	
