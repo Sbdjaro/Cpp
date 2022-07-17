@@ -1,5 +1,5 @@
 #pragma once
-#include <Fl/Fl.h>
+#include <Fl/Fl.H>
 #include <Fl/Fl_Button.H>
 
 class Flag {

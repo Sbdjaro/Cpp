@@ -1,6 +1,6 @@
 #pragma once
-#include <Fl/Fl.h>
-#include <Fl/Fl_Window.h>
+#include <Fl/Fl.H>
+#include <Fl/Fl_Window.H>
 #include <Fl/Fl_Button.H>
 #include <Fl/Fl_Box.H>
 #include "iostream"
