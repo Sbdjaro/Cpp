@@ -10,7 +10,6 @@ Window* Window::me = nullptr;
 int main() {
 	srand((long)time(nullptr));
 	Window win;
-	win.Game();
-	SDL_Delay(10000);
+	win.Pro();
 	return 0;
 }

@@ -17,5 +17,6 @@ public:
 	Image* img;
 	Person(SDL_Window*, SDL_Surface*);
 	void Draw(int);
+	void Restart();
 	~Person();
 };

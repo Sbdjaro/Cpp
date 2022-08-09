@@ -155,6 +155,16 @@ void All_Enemy::Add() {
 	}
 }
 
+void All_Enemy::Restart(){
+	auto iter = enemies.begin();
+	while (iter != enemies.end())
+	{
+		delete* iter;
+		iter++;
+	}
+	enemies.clear();
+}
+
 All_Enemy::~All_Enemy(){
 	delete img;
 	auto iter = enemies.begin();

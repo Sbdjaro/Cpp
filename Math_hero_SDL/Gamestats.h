@@ -16,4 +16,5 @@ public:
 	void Check();
 	void Spawn();
 	void Heal();
+	void Restart();
 };

@@ -49,6 +49,14 @@ void Person::Draw(int x) {
 	SDL_BlitSurface(images[cur_type][point]->img, nullptr, surface, midle);
 }
 
+void Person::Restart(){
+	cur_type = 0;
+	cur_time = 0;
+	point = 0;
+}
+
+
+
 Person::~Person() {
 	delete midle;
 	delete img;

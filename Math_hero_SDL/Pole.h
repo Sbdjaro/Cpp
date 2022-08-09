@@ -39,5 +39,6 @@ public:
 	void Shoot(int,int);
 	void Shoot_aim();
 	void Draw(int,int);
+	void Restart();
 	~Pole();
 };

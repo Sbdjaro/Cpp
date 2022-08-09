@@ -31,3 +31,13 @@ void Stats::Heal(){
 	time_to_heal = 0;
 	Window::me->pole->panel->health->Add(heal);
 }
+
+void Stats::Restart(){
+	heal = 2;
+	spawn_speed = 5;
+	multiplier = 10;
+	time_to_heal = 0;
+	time_to_spawn = 0;
+	start = true;
+	time = 0;
+}

@@ -11,5 +11,6 @@ public:
 	My_ball(SDL_Window*, SDL_Surface*);
 	void Shoot(vector<int>);
 	void Draw();
+	void Restart();
 	~My_ball();
 };

@@ -33,5 +33,6 @@ public:
 	vector<int> Get_near(int, int);
 	void Kill(int);
 	void Add();
+	void Restart();
 	~All_Enemy();
 };

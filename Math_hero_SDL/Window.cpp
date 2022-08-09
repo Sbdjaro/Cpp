@@ -22,14 +22,24 @@ Window::Window() {
 	game_over = new Game_over(window, surface);
 }
 
+void Window::Pro(){
+	while (true) {
+		if (type == 0)
+			Game();
+		else if (type == 1)
+			End_game();
+		else if (type == -1)
+			return;
+	}
+}
+
 void Window::Game() {
 	SDL_Event e;
-	bool quit = false;
 	int x = 0, y = 0;
-	while (1) {
+	while (type == 0) {
 		while (SDL_PollEvent(&e) != 0) {
 			if (e.type == SDL_QUIT) {
-				quit = true;
+				type=-1;
 			}
 			else if (e.type == SDL_KEYDOWN) {
 				if (e.key.keysym.sym == SDLK_TAB) {
@@ -112,9 +122,25 @@ void Window::Game() {
 
 void Window::End_game() {
 	game_over->Set(pole->panel->score->score, stats->time);
-
-	while (1)
-		game_over->Draw();
+	game_over->Draw();
+	SDL_Event e;
+	bool quit = false;
+	while (type==1) {
+		while (SDL_PollEvent(&e) != 0) {
+			if (e.type == SDL_QUIT) {
+				type = -1;
+			}
+			else if (e.type == SDL_KEYDOWN) {
+				if (e.key.keysym.sym == SDLK_SPACE) {
+					//cout << "SPACE";
+					pole->Restart();
+					stats->Restart();
+					type = 0;
+					pole->Draw(0,0);
+				}
+			}
+		}
+	}
 }
 
 Window::~Window() {

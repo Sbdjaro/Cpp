@@ -64,6 +64,13 @@ void Panel::Add(int c) {
 	current += c;
 }
 
+void Panel::Restart(){
+	current = 0;
+	Generate();
+	score->Restart();
+	health->Restart();
+}
+
 void Panel::Minus() {
 	if (current == 0)
 		cur_sign = true;
@@ -149,6 +156,10 @@ void Score::Add(){
 	score++;
 }
 
+void Score::Restart(){
+	score = 0;
+}
+
 
 Health::Health(SDL_Window* w, SDL_Surface* s, vector<Image*>* i) : win(w), surface(s), figures(i) {
 	img_health = new Image("img/health.png");
@@ -183,5 +194,9 @@ void Health::Add(int x) {
 void Health::Sub() {
 	health = max(0, health - 10);
 	if (health == 0)
-		Window::me->End_game();
+		Window::me->type = 1;
+}
+
+void Health::Restart(){
+	health = 100;
 }

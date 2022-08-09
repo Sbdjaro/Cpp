@@ -23,7 +23,7 @@ void My_ball::Draw() {
 		if (j!=-1) {
 			Window::me->pole->enemies->Kill(j);
 			pp.push_back(i);
-			cout << "Kill\n";
+			//cout << "Kill\n";
 			continue;
 		}
 		SDL_BlitSurface(img->img, nullptr, surface, (*i)->pose);
@@ -35,13 +35,21 @@ void My_ball::Draw() {
 	}
 }
 
+void My_ball::Restart(){
+	for (auto i = balls.begin(); i != balls.end(); i++)
+		delete* i;
+	balls.clear();
+}
+
 void My_ball::Shoot(vector<int> side) {
 	// Разные пушки
 	balls.push_back(new Ball( side[0], side[1], side[2], side[3],5 ));
-	cout << "My_ball::Shoot\n";
+	//cout << "My_ball::Shoot\n";
 }
 
 
 My_ball::~My_ball() {
+	for (auto i = balls.begin(); i != balls.end(); i++)
+		delete* i;
 	delete img;
 }

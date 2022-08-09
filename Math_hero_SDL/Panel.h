@@ -19,6 +19,7 @@ public:
 	Score(SDL_Window*, SDL_Surface*, vector<Image*>*);
 	void Draw();
 	void Add();
+	void Restart();
 	~Score();
 };
 
@@ -30,12 +31,13 @@ class Health {
 	Image* img_health;
 	SDL_Rect* rect_health;
 	vector<SDL_Rect*> rect_figures;
-	int health = 0;
+	int health = 100;
 public:
 	Health(SDL_Window*, SDL_Surface*, vector<Image*>*);
 	void Draw();
 	void Add(int x);
 	void Sub();
+	void Restart();
 	~Health();
 };
 
@@ -64,6 +66,7 @@ public:
 	void Check();
 	void Minus();
 	void Add(int);
+	void Restart();
 	~Panel();
 };
 

@@ -134,17 +134,27 @@ void Pole::Draw(int x_,int y_) {
 	
 }
 
+void Pole::Restart(){
+	x = 750; y = 750;
+	panel->Restart();
+	inventory->Restart();
+	balls->Restart();
+	enemies->Restart();
+	my_ball->Restart();
+	person->Restart();
+}
+
 void Pole::Shoot(int x_, int y_) {
 	vector<int> v = { x,y,x_,y_ };
-	cout << "Pole::Shoot\n";
+	//cout << "Pole::Shoot\n";
 	if (x_ * x_ + y_ * y_ == 0)
 		return;
 	my_ball->Shoot(v);
 }
 void Pole::Shoot_aim() {
-	cout << x << " " << y << "\n";
+	//cout << x << " " << y << "\n";
 	vector<int> tmp = enemies->Get_near(x, y);
-	cout << tmp[0] << " " << tmp[1] << "\n";
+	//cout << tmp[0] << " " << tmp[1] << "\n";
 	vector<int> v = { x,y,tmp[0]-x, tmp[1]-y };
 	if (v[0] * v[0] + v[1] * v[1] == 0)
 		return;

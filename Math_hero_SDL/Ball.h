@@ -32,6 +32,7 @@ public:
 	All_balls(SDL_Window*, SDL_Surface*);
 	void Add(int, int, int, int);
 	void Draw();
+	void Restart();
 	~All_balls();
 };
 

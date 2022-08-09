@@ -20,14 +20,20 @@ All_balls::~All_balls() {
 		delete* iter;
 		iter++;
 	}
-	
+	delete img;
 }
 
 void All_balls::Draw() {
+	//cout << balls.size() << "\n";
+	//if (balls.begin() == balls.end())
+	//	cout << "TRUE\n";
+	//else
+	//	cout << "False\n";
 	vector<int> tmp;
 	vector<list<Ball*>::iterator> pp;
+	
 	for (auto i = balls.begin(); i != balls.end(); i++) {
-		//cout << 1;
+		//cout << balls.size() << "\n";
 		tmp = (*i)->Move();
 		
 		if (!Window::me->pole->check_xy(tmp)) {
@@ -40,8 +46,10 @@ void All_balls::Draw() {
 		//cout << tmp[0] << " " << tmp[1] << "\n\n";
 		if (tmp[0] > -10 && tmp[0] < 10 && tmp[1]>-20 && tmp[1] < 20) {
 			pp.push_back(i);
-			cout << "WOW";
+			//cout << "WOW";
 			Window::me->pole->panel->health->Sub();
+			if (balls.size() == 0)
+				return;
 			continue;
 		}
 		SDL_BlitSurface(img->img, nullptr, surface, (*i)->pose);
@@ -52,6 +60,17 @@ void All_balls::Draw() {
 		//Add(rand() % 1000, rand() % 1000, rand() % 5, rand() % 5);
 	}
 	//cout << 2;
+}
+
+void All_balls::Restart(){
+	auto iter = balls.begin();
+	while (iter != balls.end())
+	{
+		delete* iter;
+		iter++;
+	}
+	balls.clear();
+	balls = list<Ball*>();
 }
 
 

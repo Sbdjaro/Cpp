@@ -15,5 +15,6 @@ public:
 	Inventory(SDL_Window*, SDL_Surface*);
 	void Draw();
 	void Change_hotbar();
+	void Restart();
 	~Inventory();
 };

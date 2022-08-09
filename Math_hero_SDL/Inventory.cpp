@@ -18,6 +18,10 @@ void Inventory::Change_hotbar() {
 	active_hotbar = (active_hotbar + 1) % 3;
 }
 
+void Inventory::Restart(){
+	active_hotbar = 0;
+}
+
 
 Inventory::~Inventory() {
 	for (int i = 0; i < 3; i++)
